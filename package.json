@@ -1,42 +1,95 @@
 {
-  "name": "react-boilerplate",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "webpack-dev-server --content-base src --hot --inline",
-    "build:prod": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jadenLog/react-boilerplate.git"
-  },
-  "author": "Jaden",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jadenLog/react-boilerplate/issues"
-  },
-  "homepage": "https://github.com/jadenLog/react-boilerplate#readme",
-  "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
-    "css-loader": "^2.1.1",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^4.6.0",
-    "img-loader": "^3.0.1",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1",
-    "webpack-dev-server": "^3.3.1"
-  },
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  }
+    "name": "react-boilerplate",
+    "version": "1.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "webpack --env.ENVIRONMENT=local --config ./webpack/webpack.config.js && webpack-dev-server --env.ENVIRONMENT=local --config ./webpack/webpack.config.js --watch",
+        "prod": "webpack --env.ENVIRONMENT=prod --config ./webpack/webpack.config.prod.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jadenLog/react-boilerplate.git"
+    },
+    "author": "Jaden",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jadenLog/react-boilerplate/issues"
+    },
+    "homepage": "https://github.com/jadenLog/react-boilerplate#readme",
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "airbnb"
+        ],
+        "globals": {
+            "SERVICE": "readable"
+        },
+        "rules": {
+            "indent": [
+                "warn",
+                4
+            ],
+            "eol-last": "off",
+            "no-console": "off",
+            "max-len": [
+                "warn",
+                {
+                    "code": 150,
+                    "ignoreComments": true,
+                    "ignoreUrls": true,
+                    "ignoreStrings": true,
+                    "ignoreTemplateLiterals": true
+                }
+            ],
+            "new-cap": "off",
+            "no-control-regex": "off",
+            "react/jsx-indent": "off",
+            "react/require-default-props": "off"
+        },
+        "env": {
+            "browser": true,
+            "es6": true,
+            "webextensions": true,
+            "node": true
+        }
+    },
+    "dependencies": {
+        "axios": "^0.19.0",
+        "prop-types": "^15.7.2",
+        "react": "^16.10.2",
+        "react-dom": "^16.10.2",
+        "styled-components": "^4.4.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.6.3",
+        "@babel/polyfill": "^7.6.0",
+        "@babel/preset-env": "^7.6.3",
+        "@babel/preset-react": "^7.6.3",
+        "babel-eslint": "^10.0.3",
+        "babel-loader": "^8.0.6",
+        "dotenv": "^8.1.0",
+        "eslint": "^6.1.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.4.0",
+        "eslint-config-react-app": "^5.0.2",
+        "eslint-plugin-flowtype": "^4.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-react": "^7.16.0",
+        "eslint-plugin-react-hooks": "^1.7.0",
+        "html-webpack-plugin": "^3.2.0",
+        "prettier": "^1.18.2",
+        "react-hot-loader": "^4.12.15",
+        "terser-webpack-plugin": "^2.1.2",
+        "url-loader": "^2.2.0",
+        "webpack": "^4.41.0",
+        "webpack-bundle-analyzer": "^3.6.0",
+        "webpack-cleanup-plugin": "^0.5.1",
+        "webpack-cli": "^3.3.9",
+        "webpack-dev-server": "^3.8.2",
+        "webpack-manifest-plugin": "^2.2.0",
+        "webpack-merge": "^4.2.2"
+    }
 }
