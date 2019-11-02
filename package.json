@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "webpack --env.ENVIRONMENT=local --config ./webpack/webpack.config.js && webpack-dev-server --env.ENVIRONMENT=local --config ./webpack/webpack.config.js --watch",
+        "test": "webpack-dev-server --env.ENVIRONMENT=local --config ./webpack/webpack.config.js --watch",
         "prod": "webpack --env.ENVIRONMENT=prod --config ./webpack/webpack.config.prod.js"
     },
     "repository": {
