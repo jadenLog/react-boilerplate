@@ -45,6 +45,7 @@
             "new-cap": "off",
             "no-control-regex": "off",
             "react/jsx-indent": "off",
+            "react/jsx-indent-props": "off",
             "react/require-default-props": "off"
         },
         "env": {
