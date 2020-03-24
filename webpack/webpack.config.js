@@ -17,7 +17,7 @@ module.exports = (env) => {
         output: {
             path: DIST_DIR,
             filename: '[name].js',
-            publicPath: '/dist/',
+            publicPath: '/',
         },
         devServer: {
             contentBase: './dist',
