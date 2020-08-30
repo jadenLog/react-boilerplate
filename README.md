@@ -1,4 +1,4 @@
-# React boilderplate (styled-components + eslint)
+# React boilderplate (@emotion/core + eslint)
 
 before start any, please run "npm install"
 
@@ -21,4 +21,3 @@ before start any, please run "npm install"
  1. create "*.env.{{environment}}*" file from env folder.
  2. define variables on each environment .env files
  3. run "<u>webpack --env.ENVIRONMENT={{environment}} --config ./webpack/webpack.config.prod.js</u>"
- 
