@@ -1,0 +1,38 @@
+{
+    "extends": [
+        "react-app",
+        "airbnb"
+    ],
+    "globals": {
+        "SERVICE": "readonly"
+    },
+    "rules": {
+        "indent": [
+            "warn",
+            4
+        ],
+        "eol-last": "off",
+        "no-console": "off",
+        "max-len": [
+            "warn",
+            {
+                "code": 150,
+                "ignoreComments": true,
+                "ignoreUrls": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true
+            }
+        ],
+        "new-cap": "off",
+        "no-control-regex": "off",
+        "react/jsx-indent": "off",
+        "react/jsx-indent-props": "off",
+        "react/require-default-props": "off"
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "webextensions": true,
+        "node": true
+    }
+}
