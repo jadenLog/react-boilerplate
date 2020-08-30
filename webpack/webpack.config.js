@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 const DIST_DIR = path.resolve(__dirname, '../dist');
 
