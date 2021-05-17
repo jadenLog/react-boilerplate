@@ -1,38 +1,74 @@
 {
-    "extends": [
-        "react-app",
-        "airbnb"
-    ],
-    "globals": {
-        "SERVICE": "readonly"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "ignorePatterns": ["*.config.js"],
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb-base",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "rules": {
-        "indent": [
-            "warn",
-            4
-        ],
-        "eol-last": "off",
-        "no-console": "off",
-        "max-len": [
-            "warn",
-            {
-                "code": 150,
-                "ignoreComments": true,
-                "ignoreUrls": true,
-                "ignoreStrings": true,
-                "ignoreTemplateLiterals": true
-            }
-        ],
-        "new-cap": "off",
-        "no-control-regex": "off",
-        "react/jsx-indent": "off",
-        "react/jsx-indent-props": "off",
-        "react/require-default-props": "off"
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "import",
+    "react",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".jsx", ".tsx", ".ts", ".js"]
+      }
     },
-    "env": {
-        "browser": true,
-        "es6": true,
-        "webextensions": true,
-        "node": true
+    "react": {
+      "version": "latest"
     }
+  },
+  "rules": {
+    "max-len": ["error", 180],
+    "indent": ["error", 2],
+    "import/extensions": ["error", "ignorePackages", {
+      "js": "never",
+      "jsx": "never",
+      "ts": "never",
+      "tsx": "never"
+    }],
+    "object-curly-newline": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.jsx", "**/*.tsx"],
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.jsx", "**/*.test.tsx"],
+      "rules": {
+        "comma-dangle": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.tsx"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off"
+      }
+    }
+  ]
 }
